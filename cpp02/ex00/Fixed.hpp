@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/18 18:45:10 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/19 18:35:23 by aourhzal         ###   ########.fr       */
+/*   Created: 2022/05/19 11:48:10 by aourhzal          #+#    #+#             */
+/*   Updated: 2022/05/20 01:46:57 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
-int main()
-{
-	Harl boo;
+#include <iostream>
 
-	boo.complain("DEBUG");
-	boo.complain("INFO");
-	boo.complain("WARNING");
-	boo.complain("ERROR");
-	return 0;
-	
-}
+class Fixed {
+	private:
+		int FixedPoint;
+		const static int Fractional = 8;
+	public:
+		Fixed();
+		Fixed(Fixed &init);
+		~Fixed();
+		Fixed & operator = (const Fixed &rhs);
+		int getRawBits( void ) const;
+		void setRawBits( int const raw );
+};
+
+#endif

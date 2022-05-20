@@ -5,21 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/18 18:45:10 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/19 18:35:23 by aourhzal         ###   ########.fr       */
+/*   Created: 2022/05/19 21:07:09 by aourhzal          #+#    #+#             */
+/*   Updated: 2022/05/20 02:04:48 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#include <iostream>
+#include <tgmath.h>
 
-int main()
+int main( void ) 
 {
-	Harl boo;
-
-	boo.complain("DEBUG");
-	boo.complain("INFO");
-	boo.complain("WARNING");
-	boo.complain("ERROR");
-	return 0;
-	
+	float a = 42.42f;
+	int b = 10840 >> 8;
+	// int c = b >> 8;
+	std::cout << b << std::endl;
+	// std::cout << c << std::endl;
 }
+
+// 101001
+// 101010
