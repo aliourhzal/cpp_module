@@ -6,21 +6,29 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:07:09 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/20 02:04:48 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:00:08 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <tgmath.h>
+#include "Fixed.hpp"
 
 int main( void ) 
 {
-	float a = 42.42f;
-	int b = 10840 >> 8;
-	// int c = b >> 8;
-	std::cout << b << std::endl;
-	// std::cout << c << std::endl;
-}
+	Fixed a;
+	Fixed const b( 10 );
+	Fixed const c( 42.42f );
+	Fixed const d( b );
+	a = Fixed( 1234.4321f );
 
-// 101001
-// 101010
+	std::cout << "a is " << a << std::endl;
+	std::cout << "b is " << b << std::endl;
+	std::cout << "c is " << c << std::endl;
+	std::cout << "d is " << d << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	return 0;
+
+}

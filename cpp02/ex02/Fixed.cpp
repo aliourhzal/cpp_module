@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 23:20:30 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/20 20:58:42 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/20 22:59:53 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,83 @@ Fixed & Fixed::operator = (const Fixed &rhs)
 	this->FixedPoint = rhs.getRawBits();
 	return (*this);
 }
+
+/* the  comparison operators */
+
+bool	Fixed::operator > (const Fixed & rhs)
+{
+	if (this->FixedPoint > rhs.FixedPoint)
+		return (true);
+	else
+		return (false);
+}
+
+bool	Fixed::operator < (const Fixed & rhs)
+{
+	if (this->FixedPoint < rhs.FixedPoint)
+		return (true);
+	else
+		return (false);
+}
+
+bool	Fixed::operator >= (const Fixed & rhs)
+{
+	if (this->FixedPoint >= rhs.FixedPoint)
+		return (true);
+	else
+		return (false);
+}
+
+bool	Fixed::operator <= (const Fixed & rhs)
+{
+	if (this->FixedPoint <= rhs.FixedPoint)
+		return (true);
+	else
+		return (false);
+}
+
+bool	Fixed::operator == (const Fixed & rhs)
+{
+	if (this->FixedPoint == rhs.FixedPoint)
+		return (true);
+	else
+		return (false);
+}
+
+bool	Fixed::operator != (const Fixed & rhs)
+{
+	if (this->FixedPoint != rhs.FixedPoint)
+		return (true);
+	else
+		return (false);
+}
+
+/* the  comparison operators */
+
+/* The arithmetic operators */
+
+Fixed Fixed::operator + (const Fixed &rhs)
+{
+	return (Fixed(this->toFloat() + rhs.toFloat()));
+}
+
+Fixed Fixed::operator - (const Fixed &rhs)
+{
+	return (Fixed(this->toFloat() - rhs.toFloat()));
+}
+
+Fixed Fixed::operator * (const Fixed &rhs)
+{
+	return (Fixed(this->toFloat() * rhs.toFloat()));
+}
+
+Fixed Fixed::operator / (const Fixed &rhs)
+{
+	return (Fixed(this->toFloat() / rhs.toFloat()));
+}
+
+/* The arithmetic operators */
+
 
 std::ostream& operator << (std::ostream &out, const Fixed &rhs)
 {

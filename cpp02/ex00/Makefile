@@ -5,7 +5,7 @@ FILES = main.cpp Fixed.cpp
 all: $(NAME)
 
 $(NAME): $(FILES)
-	c++ -Wall -Werror -Wextra $(FILES) -o $(NAME)
+	c++ -Wall -Werror -Wextra -std=c++98 $(FILES) -o $(NAME)
 
 clean:
 	rm -f $(NAME)
