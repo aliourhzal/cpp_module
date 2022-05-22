@@ -6,17 +6,17 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 21:51:29 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/22 18:17:54 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/22 18:11:12 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-	ClapTrap Kim("Kim");
-	ClapTrap Shin("Shin");
-	ClapTrap Park("Park");
+	ScavTrap Kim("Kim");
+	ScavTrap Shin("Shin");
+	ScavTrap Park("Park");
 
 	std::cout << std::endl;
 

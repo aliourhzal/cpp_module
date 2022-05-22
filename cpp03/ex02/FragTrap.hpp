@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/21 21:14:16 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/22 18:16:05 by aourhzal         ###   ########.fr       */
+/*   Created: 2022/05/22 17:39:44 by aourhzal          #+#    #+#             */
+/*   Updated: 2022/05/22 20:03:41 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#include "ClapTrap.hpp"
 
-#include <iostream>
-
-class ClapTrap
+class FragTrap: public ClapTrap
 {
-	private:
-		std::string Name;
-		int HitPoints;
-		int	EnergyPoints;
-		int	AttackDamage;
 	public:
-		ClapTrap(std::string name);
-		ClapTrap(ClapTrap& copy);
-		ClapTrap & operator = (ClapTrap& copy);
-		~ClapTrap();
+		FragTrap(std::string name);
+		FragTrap(ScavTrap& copy);
+		FragTrap & operator = (ScavTrap& copy);
+		~FragTrap();
+		
+		void guardGate();
 		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		void setAttackDamage(int amout);
-		int getAttackDamage(void);
+		void highFivesGuys(void);
 };
 
-#endif
