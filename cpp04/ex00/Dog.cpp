@@ -6,19 +6,21 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:10:07 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/22 23:40:07 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/23 18:38:43 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog")
+Dog::Dog() : Animal()
 {
+	type = "Dog";
 	std::cout << "Dog default constuctor called" << std::endl;
 }
 
-Dog::Dog(Dog & copy): Animal(copy.type)
+Dog::Dog(Dog & copy): Animal()
 {
+	type = copy.type;
 	std::cout << "Dog copy constuctor called" << std::endl;
 }
 

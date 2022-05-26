@@ -1,42 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:10:07 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/23 18:38:49 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:40:10 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat() : Animal()
+Dog::Dog() : Animal()
 {
-	type = "Cat";
-	std::cout << "Cat default constuctor called" << std::endl;
+	std::cout << "Dog default constuctor called" << std::endl;
+	type = "Dog";
+	br = new Brain("dog thoughts ....");
 }
 
-Cat::Cat(Cat & copy): Animal()
+Dog::Dog(Dog & copy): Animal()
 {
 	type = copy.type;
-	std::cout << "Cat copy constuctor called" << std::endl;
+	std::cout << "Dog copy constuctor called" << std::endl;
 }
 
-Cat & Cat::operator = (Cat & copy)
+Dog & Dog::operator = (Dog & copy)
 {
-	std::cout << "Cat copy assignment constuctor called" << std::endl;
+	std::cout << "Dog copy assignment constuctor called" << std::endl;
 	this->type = copy.type;
 	return (*this);
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-	std::cout << "Cat destructor called" << std::endl;
+	std::cout << "Dog destructor called" << std::endl;
+	delete br;
 }
 
-void Cat::makeSound() const
+void Dog::makeSound() const
 {
-	std::cout << "miaw miaw" << std::endl;
+	std::cout << "Waff Waff" << std::endl;
+}
+
+std::string Dog::getBrain(int i) const
+{
+	return(br->ideas[i]);
 }

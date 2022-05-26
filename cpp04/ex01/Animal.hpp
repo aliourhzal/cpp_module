@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 22:02:26 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/23 18:38:51 by aourhzal         ###   ########.fr       */
+/*   Created: 2022/05/22 21:45:02 by aourhzal          #+#    #+#             */
+/*   Updated: 2022/05/24 14:41:58 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-class Cat : public Animal
+#include <iostream>
+#include "Brain.hpp"
+
+class Animal 
 {
+	protected:
+		std::string type;
+		Brain *br;
 	public:
-		Cat();
-		Cat(Cat & copy);
-		Cat & operator = (Cat & copy);
-		~Cat();
+		Animal();
+		Animal(Animal &copy);
+		Animal & operator = (Animal &copy);
+		virtual ~Animal();
 
-		void makeSound() const;
+		std::string getType() const;
+		virtual void makeSound() const;
+		virtual	std::string getBrain(int i) const;
 };
+
+#endif

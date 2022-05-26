@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 01:46:52 by elix              #+#    #+#             */
-/*   Updated: 2022/05/17 15:50:49 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/26 01:32:54 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,11 @@
 #include <iomanip>
 #include "PhoneBook.hpp"
 
-void PrintSpaces(std::string Displayed)
-{
-	int len;
-
-	len = Displayed.length();
-	while (len < 10)
-	{
-		std::cout << ' ';
-		len++;
-	}
-}
-
 void	TableHeader()
 {
-	std::cout << "------------------------------------" << std::endl;
-	std::cout << "|i|FIRST NAME|LAST NAME |NICK NAME |" << std::endl;
-	std::cout << "------------------------------------" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
+	std::cout << "|         i|FIRST NAME|LAST NAME |NICK NAME |" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 }
 
 std::string	CNcharachters(std::string ToDisplay)
@@ -43,18 +31,16 @@ std::string	CNcharachters(std::string ToDisplay)
 
 void	TableContent(PhoneBook book ,int i)
 {
-	std::cout << "|" << i;
-	std::cout << "|" << CNcharachters(book.Contacts[i].FirstName);
-	PrintSpaces(book.Contacts[i].FirstName);
-	std::cout << "|" << CNcharachters(book.Contacts[i].LastName);
-	PrintSpaces(book.Contacts[i].LastName);
-	std::cout << "|" << CNcharachters(book.Contacts[i].NickName);
-	PrintSpaces(book.Contacts[i].NickName);
+	std::cout << "|" << std::setw(10) << i;
+	std::cout << "|" << std::setw(10) << CNcharachters(book.Contacts[i].getFirstName());
+	std::cout << "|" << std::setw(10) << CNcharachters(book.Contacts[i].getLastName());
+	std::cout << "|" << std::setw(10) << CNcharachters(book.Contacts[i].getNickName());
 	std::cout << "|" << std::endl;
 }
 
-void	FillAndCheck(std::string &field, std::string FieldTitle)
+std::string	FillAndCheck(std::string FieldTitle)
 {
+	std::string field;
 	std::cout << FieldTitle;
 	if(!std::getline(std::cin, field))
 			exit(0);
@@ -65,6 +51,7 @@ void	FillAndCheck(std::string &field, std::string FieldTitle)
 		if (!std::getline(std::cin, field))
 			exit(0);
 	}
+	return (field);
 }
 
 void	SearchFunc(PhoneBook book)
@@ -80,7 +67,7 @@ void	SearchFunc(PhoneBook book)
 		TableContent(book, j);
 		j++;
 	}
-	std::cout << "------------------------------------" << std::endl;
+	std::cout << "---------------------------------------------" << std::endl;
 	j = 0;
 	std::cout << "PLEAZE ENTER CONTACT INDEX: ";
 	getline(std::cin, index);

@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 21:53:09 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/23 18:38:37 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:43:05 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,9 @@ std::string Animal::getType() const
 void Animal::makeSound() const
 {
 	std::cout << "aaaaaaaaaaaaaaaa" << std::endl;
+}
+
+std::string Animal::getBrain(int i) const
+{
+	return (br->ideas[i]);
 }

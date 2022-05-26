@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 22:02:26 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/23 18:38:51 by aourhzal         ###   ########.fr       */
+/*   Created: 2022/05/24 13:10:57 by aourhzal          #+#    #+#             */
+/*   Updated: 2022/05/24 14:16:45 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
+	
 
-class Cat : public Animal
+#include <iostream>
+
+class Brain
 {
 	public:
-		Cat();
-		Cat(Cat & copy);
-		Cat & operator = (Cat & copy);
-		~Cat();
-
-		void makeSound() const;
+		std::string ideas[100];
+		Brain(std::string idea);
+		Brain(const Brain &copy);
+		Brain & operator = (const Brain &copy);
+		~Brain();
 };
+
+#endif

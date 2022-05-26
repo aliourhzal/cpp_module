@@ -6,20 +6,21 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 01:16:56 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/17 14:13:23 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/26 00:44:05 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-void	FillAndCheck(std::string &field, std::string FieldTitle);
+std::string	FillAndCheck(std::string FieldTitle);
 
 void PhoneBook::SetContact(int ContactIndex)
 {
-	FillAndCheck(this->Contacts[ContactIndex].FirstName, "First Name: ");
-	FillAndCheck(this->Contacts[ContactIndex].LastName, "Last Name: ");
-	FillAndCheck(this->Contacts[ContactIndex].NickName, "Nick Name: ");
-	FillAndCheck(this->Contacts[ContactIndex].PhoneNumber, "Phone Number: ");
+	this->Contacts[ContactIndex].setFirstName(FillAndCheck("First Name: "));
+	this->Contacts[ContactIndex].setLastName(FillAndCheck("Last Name: "));
+	this->Contacts[ContactIndex].setPhoneNumber(FillAndCheck("Phone Number: "));
+	this->Contacts[ContactIndex].setNickName(FillAndCheck("Nick Name: "));
+	this->Contacts[ContactIndex].setDarkestSecret(FillAndCheck("Darkest Secret: "));
 }
 
 void	PhoneBook::PrintInfo(int i)
@@ -29,8 +30,9 @@ void	PhoneBook::PrintInfo(int i)
 		std::cout << "Contact Not Found\n";
 		return ;
 	}
-	std::cout << "First Name: " << this->Contacts[i].FirstName << std::endl;
-	std::cout << "Last Name: " << this->Contacts[i].LastName << std::endl;
-	std::cout << "Nick Name: " << this->Contacts[i].NickName << std::endl;
-	std::cout << "Phone NUmber: " << this->Contacts[i].PhoneNumber << std::endl;
+	std::cout << "First Name: " << this->Contacts[i].getFirstName() << std::endl;
+	std::cout << "Last Name: " << this->Contacts[i].getLastName() << std::endl;
+	std::cout << "Nick Name: " << this->Contacts[i].getNickName() << std::endl;
+	std::cout << "Phone NUmber: " << this->Contacts[i].getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " << this->Contacts[i].getDarkestSecret() << std::endl;
 }

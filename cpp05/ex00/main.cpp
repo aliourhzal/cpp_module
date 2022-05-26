@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 22:02:26 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/23 18:38:51 by aourhzal         ###   ########.fr       */
+/*   Created: 2022/05/25 21:29:06 by aourhzal          #+#    #+#             */
+/*   Updated: 2022/05/25 22:24:52 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Bureaucrat.hpp"
 
-class Cat : public Animal
+int main()
 {
-	public:
-		Cat();
-		Cat(Cat & copy);
-		Cat & operator = (Cat & copy);
-		~Cat();
+	Bureaucrat b0("b0", 150);
+	// Bureaucrat b1("b1", 150);
+	// Bureaucrat b2("b2", 5);
+	// Bureaucrat b3("b3", 149);
+	try
+	{
+		std::cout << b0 << std::endl;
+		b0.decrementGrade();
+		std::cout << b0 << std::endl;
+		b0.decrementGrade();
+		std::cout << b0 << std::endl;
+	}
+	catch (std::exception & e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
-		void makeSound() const;
-};
+}

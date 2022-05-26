@@ -6,14 +6,20 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:02:26 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/23 18:38:51 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/24 14:26:13 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
+
+#include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal
 {
+	private:
+		Brain *br;
 	public:
 		Cat();
 		Cat(Cat & copy);
@@ -21,4 +27,7 @@ class Cat : public Animal
 		~Cat();
 
 		void makeSound() const;
+		std::string getBrain(int i) const;
 };
+
+#endif

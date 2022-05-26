@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:42:11 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/22 23:34:55 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/23 18:20:58 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,9 @@ int main()
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
+
+	delete meta;
+	delete i;
+	delete j;
 	return 0;
 }

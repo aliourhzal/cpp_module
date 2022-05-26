@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 21:53:09 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/23 18:38:37 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/24 15:34:03 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,3 +41,4 @@ void Animal::makeSound() const
 {
 	std::cout << "aaaaaaaaaaaaaaaa" << std::endl;
 }
+
