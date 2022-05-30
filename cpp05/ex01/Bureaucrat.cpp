@@ -6,11 +6,12 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:30:35 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/29 18:10:51 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/29 22:11:36 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(const std::string _name, int _grade) : name(_name), grade(_grade)
 {
@@ -67,6 +68,20 @@ Bureaucrat::Bureaucrat(const Bureaucrat & copy) : name(copy.getName()), grade(co
 
 Bureaucrat::~Bureaucrat()
 {
+	
+}
+
+void	Bureaucrat::signForm(Form &form)
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->name << " signed " << form.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << this->name << " couldn’t sign " << form.getName() << " because " << e.what() << '\n';
+	}
 	
 }
 

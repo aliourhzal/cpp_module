@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 01:46:52 by elix              #+#    #+#             */
-/*   Updated: 2022/05/26 01:32:54 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/26 14:09:11 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 void	TableHeader()
 {
 	std::cout << "---------------------------------------------" << std::endl;
-	std::cout << "|         i|FIRST NAME|LAST NAME |NICK NAME |" << std::endl;
+	std::cout << "|         i|FIRST NAME| LAST NAME| NICK NAME|" << std::endl;
 	std::cout << "---------------------------------------------" << std::endl;
 }
 

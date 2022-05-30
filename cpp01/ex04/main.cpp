@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 12:14:17 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/20 19:32:35 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/26 21:26:53 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int main(int ac, char** av)
 
 	if (ac < 4)
 	{
-		std::cout << "too few arguments" << std::cout;
+		std::cout << "too few arguments" << std::endl;
 		return (0);
 	}
 	if (!ToRead)

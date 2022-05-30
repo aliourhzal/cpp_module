@@ -1,10 +1,10 @@
-NAME = zombie
+NAME = replace
 
-FILE = main.cpp Zombie.cpp zombieHorde.cpp
+FILE = main.cpp
 
 all: $(NAME)
 
-$(NAME): $(FILE) Zombie.hpp
+$(NAME): $(FILE)
 	c++ -Wall -Wextra -Werror -std=c++98 -o $(NAME) $(FILE)
 
 clean:
