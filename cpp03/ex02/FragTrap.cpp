@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:07:05 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/22 21:09:47 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/31 02:57:22 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,6 @@ FragTrap & FragTrap::operator = (FragTrap& copy)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called" << std::endl;
-}
-
-void FragTrap::guardGate()
-{
-	std::cout << Name << " is now in Gate keeper mode." << std::endl;
 }
 
 void FragTrap::attack(const std::string& target)

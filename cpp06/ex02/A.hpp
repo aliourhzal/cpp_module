@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 17:39:44 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/31 03:15:28 by aourhzal         ###   ########.fr       */
+/*   Created: 2022/06/02 23:46:39 by aourhzal          #+#    #+#             */
+/*   Updated: 2022/06/02 23:47:29 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#pragma once
 
-class FragTrap: public ClapTrap
+#include "Base.hpp"
+
+class A: public Base
 {
-	public:
-		FragTrap(std::string name);
-		FragTrap(FragTrap& copy);
-		FragTrap & operator = (FragTrap& copy);
-		~FragTrap();
-
-		virtual void attack(const std::string& target);
-		void highFivesGuys(void);
-
-		int getHitPoints();
-		int getAttackDamage();
 };
-

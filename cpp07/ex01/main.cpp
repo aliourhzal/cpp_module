@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 17:39:44 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/31 03:15:28 by aourhzal         ###   ########.fr       */
+/*   Created: 2022/06/03 01:34:41 by aourhzal          #+#    #+#             */
+/*   Updated: 2022/06/03 02:32:42 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "iter.hpp"
 
-class FragTrap: public ClapTrap
+int main()
 {
-	public:
-		FragTrap(std::string name);
-		FragTrap(FragTrap& copy);
-		FragTrap & operator = (FragTrap& copy);
-		~FragTrap();
-
-		virtual void attack(const std::string& target);
-		void highFivesGuys(void);
-
-		int getHitPoints();
-		int getAttackDamage();
-};
-
+	int a[] = {1, 2, 3, 4, 5, 6, 7, 8};
+	char b[] = "HELLO THERE";
+	iter(a, 8, &test);
+	for (int i = 0; i < 8; i++)
+		printf("[%d]", a[i]);
+	std::cout << std::endl;
+	for (size_t i = 0; i < strlen(b); i++)
+		printf("[%c]", b[i]);
+	
+}

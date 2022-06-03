@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 21:29:06 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/31 18:42:58 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/01 00:14:20 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,37 @@
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main()
 {
 	Bureaucrat b0("bob", 30);
 	Bureaucrat b1("Tom", 1);
 	Bureaucrat b2("Mark", 40);
+	Intern i0;
 
-	ShrubberyCreationForm S("planting trees"); // sign 145 exec 137
-	PresidentialPardonForm P("the White House"); // sign 25 exec 5
-	RobotomyRequestForm R("Robotics club"); // sign 72 exec 45
+	Form *S;
+	try
+	{
+		S = i0.makeForm("ShrubberyCreationForm", "planting trees"); // sign 145 exec 137
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << e.what() << '\n';
+		return 0;
+	}
+	
+	Form *P;
+	P = i0.makeForm("PresidentialPardonForm", "the White House"); // sign 25 exec 5
+
+	Form *R;
+	R = i0.makeForm("RobotomyRequestForm", "Robotics club"); // sign 72 exec 45
 
 	std::cout << std::endl;
 	std::cout << "---------- Tring to execute without signing ----------" << std::endl;
 	try
 	{
-		S.execute(b0);
+		S->execute(b0);
 	}
 	catch(const std::exception& e)
 	{
@@ -38,7 +53,7 @@ int main()
 	}
 	try
 	{
-		P.execute(b1);
+		P->execute(b1);
 	}
 	catch(const std::exception& e)
 	{
@@ -46,7 +61,7 @@ int main()
 	}
 	try
 	{
-		R.execute(b2);
+		R->execute(b2);
 	}
 	catch(const std::exception& e)
 	{
@@ -56,9 +71,9 @@ int main()
 	std::cout << "---------- Bureaucrats tring to execute Form with 'executeForm'  ----------" << std::endl;
 	try
 	{
-		b0.executeForm(S);
-		b1.executeForm(P);
-		b2.executeForm(R);
+		b0.executeForm(*S);
+		b1.executeForm(*P);
+		b2.executeForm(*R);
 	}
 	catch(const std::exception& e)
 	{
@@ -67,13 +82,13 @@ int main()
 	
 	std::cout << std::endl;
 	std::cout << "---------- Bureaucrats sign and execute forms with 'executeForm'  ----------" << std::endl;
-	b0.signForm(S);
-	b1.signForm(P);
-	b2.signForm(R);
+	b0.signForm(*S);
+	b1.signForm(*P);
+	b2.signForm(*R);
 	std::cout << std::endl;
-	b0.executeForm(S);
-	b1.executeForm(P);
-	b2.executeForm(R);
+	b0.executeForm(*S);
+	b1.executeForm(*P);
+	b2.executeForm(*R);
 	
 	
 }

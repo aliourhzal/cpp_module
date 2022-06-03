@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:07:05 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/22 18:12:47 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/31 03:14:30 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ ScavTrap::~ScavTrap()
 void ScavTrap::guardGate()
 {
 	std::cout << Name << " is now in Gate keeper mode." << std::endl;
+}
+
+int ScavTrap::getEnergyPoints()
+{
+	return (EnergyPoints);
 }
 
 void ScavTrap::attack(const std::string& target)

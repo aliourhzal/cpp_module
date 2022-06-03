@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:07:05 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/22 21:09:47 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/31 03:15:39 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,14 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap destructor called" << std::endl;
 }
 
-void FragTrap::guardGate()
+int FragTrap::getHitPoints()
 {
-	std::cout << Name << " is now in Gate keeper mode." << std::endl;
+	return (HitPoints);
+}
+
+int FragTrap::getAttackDamage()
+{
+	return (AttackDamage);
 }
 
 void FragTrap::attack(const std::string& target)

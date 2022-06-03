@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 17:39:44 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/31 03:15:28 by aourhzal         ###   ########.fr       */
+/*   Created: 2022/06/03 02:10:38 by aourhzal          #+#    #+#             */
+/*   Updated: 2022/06/03 02:11:52 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#pragma once
 
-class FragTrap: public ClapTrap
+#include <iostream>
+
+template <typename T>
+void test(T &param)
 {
-	public:
-		FragTrap(std::string name);
-		FragTrap(FragTrap& copy);
-		FragTrap & operator = (FragTrap& copy);
-		~FragTrap();
+	param += 32; 
+}
 
-		virtual void attack(const std::string& target);
-		void highFivesGuys(void);
-
-		int getHitPoints();
-		int getAttackDamage();
-};
-
+template <typename T>
+void	iter(T *arr, int size, void (*f)(T &))
+{
+	for (int i = 0; i < size; i++)
+		f(arr[i]);
+}

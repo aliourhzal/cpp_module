@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 17:39:44 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/31 03:15:28 by aourhzal         ###   ########.fr       */
+/*   Created: 2022/06/03 01:18:58 by aourhzal          #+#    #+#             */
+/*   Updated: 2022/06/03 01:23:44 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#pragma once
 
-class FragTrap: public ClapTrap
+template<typename S>
+void swap(S &arg1, S &arg2)
 {
-	public:
-		FragTrap(std::string name);
-		FragTrap(FragTrap& copy);
-		FragTrap & operator = (FragTrap& copy);
-		~FragTrap();
+	S tmp = arg1;
+	arg1 = arg2;
+	arg2 = tmp;
+}
 
-		virtual void attack(const std::string& target);
-		void highFivesGuys(void);
+template<typename MIN>
+MIN min(MIN a, MIN b)
+{
+	if (a < b)
+		return (a);
+	return (b);
+}
 
-		int getHitPoints();
-		int getAttackDamage();
-};
-
+template<typename MAX>
+MAX max(MAX a, MAX b)
+{
+	if (a > b)
+		return (a);
+	return (b);
+}

@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 17:39:44 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/31 03:15:28 by aourhzal         ###   ########.fr       */
+/*   Created: 2022/06/03 02:33:56 by aourhzal          #+#    #+#             */
+/*   Updated: 2022/06/03 02:55:02 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include <iostream>
 
-class FragTrap: public ClapTrap
+template <typename T> class Array
 {
 	public:
-		FragTrap(std::string name);
-		FragTrap(FragTrap& copy);
-		FragTrap & operator = (FragTrap& copy);
-		~FragTrap();
-
-		virtual void attack(const std::string& target);
-		void highFivesGuys(void);
-
-		int getHitPoints();
-		int getAttackDamage();
+		Array()
+		{
+			Array *arr = new Array;
+		}
+		Array(int n)
+		{
+			Array *arr = new Array[n];
+		}
 };
 
+int main()
+{
+	Array<int *> a(5);
+
+}

@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:47:15 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/06/01 01:51:04 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/31 15:29:37 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,6 @@ void	Form::beSigned(const Bureaucrat& b)
 	if (b.getGrade() > this->gradeRequiredSign)
 		throw (Form::GradeTooLowException());
 	this->sign = true;
-}
-
-Form &Form::operator=(const Form &srcObject)
-{
-	*const_cast<std::string *>(&name) = srcObject.getName();
-	*const_cast<int *>(&gradeRequiredSign) = srcObject.getGS();
-	*const_cast<int *>(&gradeRequiredExec) = srcObject.getGE();
-	sign = srcObject.getSign();
-	return (*this);
 }
 
 std::ostream & operator << (std::ostream & out, const Form & f)

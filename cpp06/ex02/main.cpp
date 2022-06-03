@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/22 17:39:44 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/31 03:15:28 by aourhzal         ###   ########.fr       */
+/*   Created: 2022/06/02 21:15:13 by aourhzal          #+#    #+#             */
+/*   Updated: 2022/06/02 23:52:33 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
-class FragTrap: public ClapTrap
+int main()
 {
-	public:
-		FragTrap(std::string name);
-		FragTrap(FragTrap& copy);
-		FragTrap & operator = (FragTrap& copy);
-		~FragTrap();
+	Base *ptrToObj;
 
-		virtual void attack(const std::string& target);
-		void highFivesGuys(void);
-
-		int getHitPoints();
-		int getAttackDamage();
-};
-
+	ptrToObj = generate();
+	Base &refToObj = *ptrToObj;
+	identify(ptrToObj);
+	identify(refToObj);
+}

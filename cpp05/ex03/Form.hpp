@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 14:40:04 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/06/01 01:30:58 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/05/31 14:51:36 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ class Form
 		
 		Form(std::string name, int gradeS, int gradeE);
 		Form(const Form &copy);
-		Form & operator=(const Form &srcObject);
 		~Form();
 };
 
