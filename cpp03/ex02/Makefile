@@ -1,10 +1,8 @@
 NAME	=	fragtrap
 
-FILES	=	main.cpp Claptrap.cpp Scavtrap.cpp
+FILES	=	main.cpp Claptrap.cpp Scavtrap.cpp Fragtrap.cpp
 
-HEADERS	=	Claptrap.hpp Scavtrap.hpp
-
-FLAGS	=	-Wall -Wextra -Werror -std=c++98
+HEADERS	=	Claptrap.hpp Scavtrap.hpp Fragtrap.hpp
 
 all:	$(NAME)
 

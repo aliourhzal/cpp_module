@@ -1,8 +1,8 @@
 NAME	=	slaptrap
 
-FILES	=	main.cpp Claptrap.cpp Scavtrap.cpp
+FILES	=	main.cpp Claptrap.cpp Scavtrap.cpp Fragtrap.cpp DiamondTrap.cpp
 
-HEADERS	=	Claptrap.hpp Scavtrap.hpp
+HEADERS	=	Claptrap.hpp Scavtrap.hpp Fragtrap.hpp DiamondTrap.hpp
 
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
