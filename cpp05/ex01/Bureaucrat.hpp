@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 14:17:29 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/29 22:05:05 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/07 12:08:46 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ class	Bureaucrat
 		int			getGrade() const;
 		void	signForm(Form &form);
 };
-
 std::ostream & operator << (std::ostream &out, const Bureaucrat &b);
+

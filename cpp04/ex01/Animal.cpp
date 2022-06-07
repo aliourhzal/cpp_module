@@ -6,13 +6,15 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 21:53:09 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/24 14:43:05 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/05 15:57:11 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal() : type("Animal"){}
+Animal::Animal() : type("Animal"){
+	br = new Brain("aaaaaaaaaa");
+}
 
 Animal::Animal(Animal &copy)
 {

@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:42:11 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/24 16:03:23 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/05 15:49:17 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 int main()
 {
 	const Animal* meta[20];
-	const Animal *Hello;
-	Hello = new Dog();
 	for (int i = 0; i < 10; i++)
 		meta[i] = new Dog();
 	for (int i = 10; i < 20; i++)

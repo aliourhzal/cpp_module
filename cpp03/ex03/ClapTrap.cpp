@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 21:50:23 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/22 13:17:50 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/05 14:47:11 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,7 @@ ClapTrap & ClapTrap::operator = (ClapTrap& copy)
 }
 
 ClapTrap::~ClapTrap()
-{
-	std::cout << "Destructor called" << std::endl;
-	std::cout << Name << " has " << HitPoints << " HitPoints and " << EnergyPoints << " EnergyPoints" << std::endl;
-}
+{}
 
 void ClapTrap::setAttackDamage(int amout)
 {

@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 13:56:59 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/06/05 03:25:08 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/05 14:48:56 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
-class DiamondTrap : public FragTrap, public ScavTrap, public ClapTrap
+class DiamondTrap : public FragTrap, public ScavTrap
 {
 	private:
 		std::string Name;
@@ -30,4 +30,5 @@ class DiamondTrap : public FragTrap, public ScavTrap, public ClapTrap
 		int getHitPoint();
 		int getEnergyPoints();
 		int getAttackDamage();
+		void  whoAmI();
 };

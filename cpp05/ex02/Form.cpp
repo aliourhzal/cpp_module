@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:47:15 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/06/01 01:51:04 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/07 13:12:49 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,12 @@ void	Form::beSigned(const Bureaucrat& b)
 	this->sign = true;
 }
 
-Form &Form::operator=(const Form &srcObject)
+Form &Form::operator=(const Form &copy)
 {
-	*const_cast<std::string *>(&name) = srcObject.getName();
-	*const_cast<int *>(&gradeRequiredSign) = srcObject.getGS();
-	*const_cast<int *>(&gradeRequiredExec) = srcObject.getGE();
-	sign = srcObject.getSign();
+	*const_cast<std::string *>(&name) = copy.getName();
+	*const_cast<int *>(&gradeRequiredSign) = copy.getGS();
+	*const_cast<int *>(&gradeRequiredExec) = copy.getGE();
+	sign = copy.getSign();
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 21:29:06 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/29 18:50:43 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/07 09:19:46 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main()
 {
 	Bureaucrat b0("b0", 150);
-	Bureaucrat b1 = b0;
+	// Bureaucrat b1("ll", 5);
 	// Bureaucrat b2("b2", 5);
 	// Bureaucrat b3("b3", 149);
 	try
@@ -30,5 +30,5 @@ int main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-
+	
 }

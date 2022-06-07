@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 21:29:06 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/31 18:42:58 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/07 14:18:59 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << std::endl;
 	}
 	try
 	{
@@ -42,7 +42,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << std::endl;
 	}
 	try
 	{
@@ -50,10 +50,10 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
-	std::cout << "---------- Bureaucrats tring to execute Form with 'executeForm'  ----------" << std::endl;
+	std::cout << "---------- Bureaucrats tring to execute Form with 'executeForm' without signing  ----------" << std::endl;
 	try
 	{
 		b0.executeForm(S);
@@ -62,7 +62,7 @@ int main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << std::endl;
 	}
 	
 	std::cout << std::endl;

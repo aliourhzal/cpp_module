@@ -1,4 +1,4 @@
-NAME	=	slaptrap
+NAME	=	DiamondTrap
 
 FILES	=	main.cpp Claptrap.cpp Scavtrap.cpp Fragtrap.cpp DiamondTrap.cpp
 

@@ -6,18 +6,34 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:30:35 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/29 18:10:51 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/07 12:10:20 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(const std::string _name, int _grade) : name(_name), grade(_grade)
+Bureaucrat::Bureaucrat(const std::string _name, int _grade) : name(_name)
 {
 	if (_grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	else if (_grade > 150)
 		throw Bureaucrat::GradeTooLowException();
+	grade = _grade;
+}
+
+Bureaucrat & Bureaucrat::operator = (const Bureaucrat & copy)
+{
+	*const_cast<std::string *>(&name) = copy.getName();
+	grade = copy.getGrade();
+	return (*this);
+}
+
+Bureaucrat::Bureaucrat(const Bureaucrat & copy) : name(copy.getName()), grade(copy.getGrade())
+{
+}
+
+Bureaucrat::~Bureaucrat()
+{
 }
 
 void	Bureaucrat::incrementGrade()
@@ -52,22 +68,6 @@ const char * Bureaucrat::GradeTooHighException::what () const throw ()
 const char * Bureaucrat::GradeTooLowException::what () const throw ()
 {
 	return "Too Low";
-}
-
-Bureaucrat & Bureaucrat::operator = (const Bureaucrat & copy)
-{
-	(std::string)name = copy.getName();
-	grade = copy.getGrade();
-	return (*this);
-}
-
-Bureaucrat::Bureaucrat(const Bureaucrat & copy) : name(copy.getName()), grade(copy.getGrade())
-{
-}
-
-Bureaucrat::~Bureaucrat()
-{
-	
 }
 
 std::ostream & operator << (std::ostream &out, const Bureaucrat &b)

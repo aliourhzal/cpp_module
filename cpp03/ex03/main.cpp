@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 21:51:29 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/06/05 02:48:23 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/05 14:51:03 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int main(void)
 	ScavTrap	HH("HH");
 	FragTrap	JJ("JJ");
 
+	Kim.whoAmI();
 	std::cout << "DiamondTrap_HitPoints: " << Kim.getHitPoint() << std::endl;
 	std::cout << "FragTrap_HitPoints: " << JJ.getHitPoints() << std::endl;
 	std::cout << std::endl;

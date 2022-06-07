@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 22:42:11 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/24 14:48:41 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/05 15:56:42 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@
 int main()
 {
 	const Animal* meta[20];
-
+	Animal hh;
 	for (int i = 0; i < 10; i++)
 		meta[i] = new Dog();
 	for (int i = 10; i < 20; i++)
 		meta[i] = new Cat();
-	std::cout << meta[1]->getBrain(16) << std::endl;
 	for(int i = 0; i < 20; i++)
 		delete meta[i];
 }

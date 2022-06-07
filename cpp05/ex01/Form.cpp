@@ -6,7 +6,7 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 21:47:15 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/05/29 23:59:16 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/07 09:34:10 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,15 @@ Form::Form(std::string Name, int gradeS, int gradeE) : name(Name), gradeRequired
 
 Form::Form(const Form &copy) : name(copy.name), sign(copy.sign), gradeRequiredSign(copy.gradeRequiredSign), gradeRequiredExec(copy.gradeRequiredExec)
 {}
+
+Form & Form::operator=(const Form & copy)
+{
+	*const_cast<std::string *>(&name) = copy.getName();
+	sign = copy.getSign();
+	*const_cast<int *>(&gradeRequiredSign) = copy.getGS();
+	*const_cast<int *>(&gradeRequiredExec) = copy.getGE();
+	return (*this);
+}
 
 Form::~Form(){}
 

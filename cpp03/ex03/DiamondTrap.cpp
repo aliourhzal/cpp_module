@@ -6,23 +6,22 @@
 /*   By: aourhzal <aourhzal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/05 03:20:13 by aourhzal          #+#    #+#             */
-/*   Updated: 2022/06/05 03:23:12 by aourhzal         ###   ########.fr       */
+/*   Updated: 2022/06/05 14:50:46 by aourhzal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(std::string Name) : FragTrap(Name), ScavTrap(Name)
+DiamondTrap::DiamondTrap(std::string Name) : ClapTrap(Name + "_clap_name"), FragTrap(Name), ScavTrap(Name)
 {
 	std::cout << "DiamondTrap constructor is called" << std::endl;
 	this->Name = Name;
-	ClapTrap::Name += "_clap_name";
 	HitPoints = FragTrap::HitPoints;
 	EnergyPoints = ScavTrap::EnergyPoints;
 	AttackDamage = FragTrap::AttackDamage;
 }
 
-DiamondTrap::DiamondTrap(DiamondTrap & copy) : FragTrap(copy.Name), ScavTrap(copy.Name)
+DiamondTrap::DiamondTrap(DiamondTrap & copy) : ClapTrap(copy.Name + "_clap_name"), FragTrap(copy.Name), ScavTrap(copy.Name)
 {
 	std::cout << "DiamondTrap copy constructor is called" << std::endl;
 	Name = copy.Name;
@@ -59,4 +58,9 @@ int DiamondTrap::getEnergyPoints()
 int DiamondTrap::getAttackDamage()
 {
 	return (AttackDamage);
+}
+
+void DiamondTrap::whoAmI()
+{
+	std::cout << "My Name is: " << Name << " And My ClapTrap Name is: " << ClapTrap::Name << std::endl;
 }
